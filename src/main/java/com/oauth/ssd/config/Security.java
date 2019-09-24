@@ -18,7 +18,8 @@ public class Security extends WebSecurityConfigurerAdapter{
           .authorizeRequests()
             .antMatchers("/resources/**", "/favicon.ico", "/login**", "/webjars/**")
             .permitAll()
-          .anyRequest().hasRole("ROLE_USER")
+          .anyRequest()
+            .authenticated()
           .and().logout().logoutSuccessUrl("/loginConsole").permitAll();
     }
 }
