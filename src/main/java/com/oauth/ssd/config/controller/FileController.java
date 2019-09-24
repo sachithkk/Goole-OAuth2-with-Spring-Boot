@@ -19,8 +19,8 @@ import com.oauth.ssd.service.GoogleDriveService;
 @Controller
 public class FileController {
 	
-	@Autowired
-	GoogleDriveService googleDriveService;
+		@Autowired
+		GoogleDriveService googleDriveService;
 		
 		@RequestMapping(value = "/upload", method=RequestMethod.POST)
 		public  String uploadMultipleFiles(Principal principal,@RequestParam("file") MultipartFile[] files) throws Exception {
